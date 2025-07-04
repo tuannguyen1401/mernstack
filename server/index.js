@@ -27,7 +27,7 @@ mongoose
 
 app.use("/api", userRoute);
 app.use(cors({
-    origin: 'http://localhost:3000',
+    origin: process.env.CLIENT_ORIGIN,
     methods: ['GET','POST','PUT','DELETE'],
     credentials: true      // nếu gửi kèm cookie/token
   }));
