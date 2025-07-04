@@ -1,0 +1,18 @@
+{
+    "name": "mernstack",
+    "private": true,
+    "workspaces": [
+      "client",
+      "server"
+    ],
+    "scripts": {
+      "start": "concurrently \"npm run server\" \"npm run client\"",
+      "client": "npm --workspace client start",
+      "server": "npm --workspace server start",
+      "install-all": "npm install",
+      "build": "npm --workspace client run build"
+    },
+    "devDependencies": {
+      "concurrently": "^8.2.0"
+    }
+  }
