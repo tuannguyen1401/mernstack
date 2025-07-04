@@ -9,8 +9,13 @@ const app = express();
 dotenv.config();
 
 app.use(bodyParser.json());
-app.use(cors());
 
+app.use(cors({
+    origin: process.env.CLIENT_ORIGIN,
+    methods: ['GET','POST','PUT','DELETE'],
+    credentials: true
+  }));
+  
 const PORT      = process.env.PORT || 7000;
 const MONGO_URL = process.env.MONGO_URL;
 
@@ -26,9 +31,4 @@ mongoose
     });
 
 app.use("/api", userRoute);
-app.use(cors({
-    origin: process.env.CLIENT_ORIGIN,
-    methods: ['GET','POST','PUT','DELETE'],
-    credentials: true      // nếu gửi kèm cookie/token
-  }));
 
