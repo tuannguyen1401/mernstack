@@ -53,7 +53,8 @@ const User = () => {
             </thead>
 
             <tbody>
-                {users.map((user, index)=> {
+                {users && users.length > 0 ? (
+                    users.map((user, index)=> {
                     return (
                         <tr key={index + 1}>
                             <td>{index + 1}</td>
@@ -68,7 +69,12 @@ const User = () => {
                             </td>
                         </tr>
                     )
-                })}
+                })
+                ) : (
+                    <tr>
+                        <td colSpan={5} className='text-center'>No users found</td>
+                    </tr>
+                )}
             </tbody>
         </table>
     </div>
