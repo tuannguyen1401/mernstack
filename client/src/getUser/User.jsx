@@ -53,7 +53,7 @@ const User = () => {
             </thead>
 
             <tbody>
-                {users && users.length > 0 ? (
+                {Array.isArray(users) && users.length > 0 ? (
                     users.map((user, index)=> {
                     return (
                         <tr key={index + 1}>
