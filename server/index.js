@@ -10,11 +10,7 @@ dotenv.config({ path: './.env' });
 
 app.use(bodyParser.json());
 
-app.use(cors({
-    origin: process.env.CLIENT_ORIGIN,
-    methods: ['GET','POST','PUT','DELETE'],
-    credentials: true
-  }));
+app.use(cors());
 
 const PORT      = process.env.PORT || 7000;
 const MONGO_URL = process.env.MONGO_URL;
