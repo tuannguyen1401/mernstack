@@ -10,7 +10,8 @@
       "client": "npm --workspace client start",
       "server": "npm --workspace server start",
       "install-all": "npm install",
-      "build": "npm --workspace client run build"
+      "build": "npm --workspace client run build",
+      "start:prod": "npm run build && npm --workspace server start"
     },
     "devDependencies": {
       "concurrently": "^8.2.0"
